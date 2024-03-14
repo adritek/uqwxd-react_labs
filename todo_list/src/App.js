@@ -66,9 +66,9 @@ const App = () => {
                 <button type ="submit">Add Todo</button>
             </form>
 
-            {todos.map((todo) => 
+            {todos.map((todo) => (
                 <div className="todo" key={todo.id}>
-                    <div className="todo-text">{todo.text}
+                    <div className="todo-text">
                         <input 
                             type="checkbox" 
                             id="completed" 
@@ -85,7 +85,7 @@ const App = () => {
                             (<div>{todo.text}</div>)
                         }
                     </div>
-                    <div>
+                    <div className="todo-actions">
                         {/* if it is edit mode, allow submit edit, else allow edit */}
                         {todo.id === todoEditing ?
                         (
@@ -98,7 +98,7 @@ const App = () => {
                         <button onClick={() => deleteTodo(todo.id)}>Delete</button>
                     </div>
                 </div>
-            )}
+            ))}
         </div>
     );
 };
